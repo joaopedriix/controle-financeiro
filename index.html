@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#5B2A45">
+<title>Controle Financeiro Premium — Organize sua vida financeira</title>
+<meta name="description" content="Saiba exatamente para onde vai o seu dinheiro. Acesso imediato ao Controle Financeiro Premium por R$ 47,90.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1f16'/%3E%3Ctext x='16' y='23' font-size='18' text-anchor='middle' fill='%23FFC942' font-family='Arial' font-weight='bold'%3ER%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #FAF7F8;
+    --bg-alt: #F1EBEE;
+    --surface: #FFFFFF;
+    --ink: #241B22;
+    --ink-soft: #6B5C64;
+    --line: #E6DCE0;
+    --accent: #5B2A45;
+    --accent-2: #7A3F5C;
+    --accent-tint: #EFE1E8;
+    --on-accent: #FFFFFF;
+    --gold: #A87C3F;
+    --gold-tint: #F1E4CB;
+    --shadow: 0 24px 60px -32px rgba(36,27,34,0.35);
+    --radius-s: 8px;
+    --radius-m: 14px;
+    --radius-l: 26px;
+    --font-ui: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI Variable Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-num: ui-serif, "New York", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1B1317;
+      --bg-alt: #241A1F;
+      --surface: #2A1E24;
+      --ink: #F4ECEF;
+      --ink-soft: #C7B4BE;
+      --line: #3B2B32;
+      --accent: #E3A9C4;
+      --accent-2: #EEC0D6;
+      --accent-tint: #3A2530;
+      --on-accent: #1B1317;
+      --gold: #E0B978;
+      --gold-tint: #3A2E1C;
+      --shadow: 0 24px 60px -28px rgba(0,0,0,0.6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1B1317; --bg-alt: #241A1F; --surface: #2A1E24; --ink: #F4ECEF; --ink-soft: #C7B4BE;
+    --line: #3B2B32; --accent: #E3A9C4; --accent-2: #EEC0D6; --accent-tint: #3A2530;
+    --on-accent: #1B1317; --gold: #E0B978; --gold-tint: #3A2E1C;
+    --shadow: 0 24px 60px -28px rgba(0,0,0,0.6);
+  }
+  :root[data-theme="light"] {
+    --bg: #FAF7F8; --bg-alt: #F1EBEE; --surface: #FFFFFF; --ink: #241B22; --ink-soft: #6B5C64;
+    --line: #E6DCE0; --accent: #5B2A45; --accent-2: #7A3F5C; --accent-tint: #EFE1E8;
+    --on-accent: #FFFFFF; --gold: #A87C3F; --gold-tint: #F1E4CB;
+    --shadow: 0 24px 60px -32px rgba(36,27,34,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-ui);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img, svg { max-width: 100%; display: block; }
+  a { color: inherit; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 650; letter-spacing: -0.01em; }
+  p { margin: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-left: clamp(1.5rem, 5vw, 3rem);
+    padding-right: clamp(1.5rem, 5vw, 3rem);
+  }
+
+  .topbar {
+    padding: 1.75rem 0;
+    text-align: center;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .brand-mark {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .block { padding: clamp(4rem, 9vw, 7.5rem) 0; }
+  .block--alt { background: var(--bg-alt); }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .h1 { font-size: clamp(2.35rem, 5.4vw, 4rem); line-height: 1.08; }
+  .h2 { font-size: clamp(1.9rem, 3.6vw, 2.65rem); line-height: 1.14; }
+  .lede {
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    color: var(--ink-soft);
+    max-width: 40ch;
+  }
+
+  .btn {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    border-radius: var(--radius-s);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .btn--ghost {
+    background: var(--accent-tint);
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.98rem;
+    padding: 0.85rem 1.4rem;
+  }
+  .btn--ghost:hover { background: var(--accent); color: var(--on-accent); transform: translateY(-1px); }
+
+  .btn--primary {
+    background: var(--accent);
+    color: var(--on-accent);
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    padding: 1.15rem 2.1rem;
+    box-shadow: var(--shadow);
+  }
+  .btn--primary:hover { transform: translateY(-2px); background: var(--accent-2); }
+
+  .btn--block { text-transform: uppercase; letter-spacing: 0.04em; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-top: clamp(2rem, 6vw, 3.5rem); }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  .hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .hero-canvas-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-l);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .hero-canvas-wrap canvas { width: 100%; height: 100%; display: block; }
+  .hero-canvas-caption {
+    position: absolute;
+    left: 1.4rem; bottom: 1.3rem;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-canvas-wrap { order: -1; max-width: 22rem; margin: 0 auto; }
+  }
+
+  /* ---------- Dor ---------- */
+  .pain-list { display: flex; flex-direction: column; gap: 0; max-width: 46rem; }
+  .pain-item {
+    display: flex; align-items: baseline; gap: 1.25rem;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: clamp(1.05rem, 1.9vw, 1.3rem);
+  }
+  .pain-item:first-child { border-top: 1px solid var(--line); }
+  .pain-num { font-family: var(--font-num); font-size: 1rem; color: var(--gold); flex-shrink: 0; width: 1.6rem; }
+  .pain-punch {
+    margin-top: 2.25rem;
+    font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+    font-weight: 650;
+    max-width: 30ch;
+  }
+  .pain-punch em { color: var(--accent); font-style: normal; }
+
+  /* ---------- Produto / dashboard mock ---------- */
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2.5rem, 5vw, 4.5rem);
+    align-items: center;
+  }
+  @media (max-width: 860px) { .product-grid { grid-template-columns: 1fr; } }
+
+  .mockup {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow);
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+  }
+  .mockup-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.75rem; }
+  .mockup-label { font-size: 0.8rem; color: var(--ink-soft); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .mockup-value { font-family: var(--font-num); font-size: clamp(1.6rem, 3.2vw, 2.1rem); color: var(--accent); font-variant-numeric: tabular-nums; }
+  .mockup-ring { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; font-size: 0.85rem; font-weight: 700; color: var(--accent); background: conic-gradient(var(--accent) 0 62%, var(--accent-tint) 62% 100%); }
+  .mockup-ring span { width: 46px; height: 46px; border-radius: 50%; background: var(--surface); display: grid; place-items: center; }
+
+  .bars { display: flex; flex-direction: column; gap: 0.9rem; }
+  .bar-row { display: grid; grid-template-columns: 7rem 1fr 3.6rem; align-items: center; gap: 0.75rem; }
+  .bar-label { font-size: 0.85rem; color: var(--ink-soft); }
+  .bar-track { height: 8px; border-radius: 5px; background: var(--bg-alt); overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 5px; background: var(--accent); }
+  .bar-fill.gold { background: var(--gold); }
+  .bar-value { font-size: 0.8rem; text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-soft); }
+
+  .feature-list { display: flex; flex-direction: column; gap: 1.9rem; }
+  .feature-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .feature-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); margin-top: 0.55rem; flex-shrink: 0; }
+  .feature-title { font-weight: 650; font-size: 1.08rem; margin-bottom: 0.2rem; }
+  .feature-body { color: var(--ink-soft); font-size: 0.98rem; max-width: 34ch; }
+
+  /* ---------- Transformação ---------- */
+  .benefits {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem 2.5rem;
+    margin-top: 2.5rem;
+  }
+  @media (max-width: 640px) { .benefits { grid-template-columns: 1fr; } }
+  .benefit { display: flex; gap: 0.9rem; align-items: flex-start; font-size: 1.02rem; }
+  .check { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--accent-tint); display: grid; place-items: center; margin-top: 0.1rem; }
+  .check svg { width: 12px; height: 12px; }
+  .check svg path { stroke: var(--accent); }
+
+  /* ---------- Oferta ---------- */
+  .offer-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow);
+    padding: clamp(2rem, 5vw, 3.5rem);
+    text-align: center;
+    max-width: 34rem;
+    margin: 2.5rem auto 0;
+  }
+  .offer-tag { display: inline-block; background: var(--gold-tint); color: var(--gold); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.4rem 0.8rem; border-radius: 999px; margin-bottom: 1.5rem; }
+  .offer-now { font-family: var(--font-num); font-size: clamp(2.6rem, 7vw, 3.4rem); color: var(--accent); font-variant-numeric: tabular-nums; margin: 0 0 0.2rem; }
+  .offer-terms { color: var(--ink-soft); font-size: 0.92rem; margin-bottom: 1.75rem; }
+  .offer-guarantee { display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin-top: 1.5rem; font-size: 0.88rem; color: var(--ink-soft); }
+
+  .faq { max-width: 40rem; margin: 4rem auto 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .faq-item { border-bottom: 1px solid var(--line); padding: 0.3rem 0; }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    font-weight: 600;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+";
+    font-size: 1.4rem;
+    color: var(--accent);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item p { padding-bottom: 1.15rem; color: var(--ink-soft); max-width: 55ch; }
+
+  footer { padding: 3rem 0 2.5rem; text-align: center; color: var(--ink-soft); font-size: 0.82rem; }
+  footer a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="brand"><span class="brand-mark"></span>Controle Financeiro Premium</span>
+</header>
+
+<main>
+  <section class="block hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Controle financeiro sem complicação</span>
+        <h1 class="h1">Cadê o dinheiro que devia ter sobrado esse mês?</h1>
+        <p class="lede">Você não precisa ganhar mais. Precisa ver para onde cada real vai. O Controle Financeiro Premium mostra isso em poucos minutos — sem fórmula, sem complicação.</p>
+        <a class="btn btn--ghost" href="#oferta">Quero ver para onde vai meu dinheiro →</a>
+      </div>
+      <div class="hero-canvas-wrap">
+        <canvas id="heroCanvas" aria-hidden="true"></canvas>
+        <span class="hero-canvas-caption">do caos à ordem, em segundos</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="block block--alt">
+    <div class="wrap">
+      <span class="eyebrow reveal">Se isso parece familiar...</span>
+      <h2 class="h2 reveal" style="max-width: 22ch; margin-bottom: 2.5rem;">O problema nunca foi quanto você ganha.</h2>
+      <ul class="pain-list reveal">
+        <li class="pain-item"><span class="pain-num">01</span><span>O dinheiro cai. E, sem perceber, some.</span></li>
+        <li class="pain-item"><span class="pain-num">02</span><span>Uma compra aqui, outra ali — e no fim do mês não sobra nada.</span></li>
+        <li class="pain-item"><span class="pain-num">03</span><span>Abrir o extrato do banco devia ser tranquilo. Pra você, é ansiedade.</span></li>
+        <li class="pain-item"><span class="pain-num">04</span><span>Você promete: mês que vem eu me organizo.</span></li>
+        <li class="pain-item"><span class="pain-num">05</span><span>Mas o mês que vem chega... e tudo se repete.</span></li>
+      </ul>
+      <p class="pain-punch reveal">Isso não é falta de disciplina. É falta de <em>visão</em>.</p>
+      <div class="reveal" style="margin-top: 2.25rem;">
+        <a class="btn btn--ghost" href="#oferta">Quero enxergar com clareza →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <span class="eyebrow reveal">Conheça o Controle Financeiro Premium</span>
+      <h2 class="h2 reveal" style="max-width: 20ch; margin-bottom: 0.75rem;">Sua vida financeira, organizada em um único lugar.</h2>
+      <p class="lede reveal" style="margin-bottom: 3rem;">Sem fórmulas. Sem complicação. Só clareza.</p>
+
+      <div class="product-grid">
+        <ul class="feature-list reveal">
+          <li class="feature-item">
+            <span class="feature-dot"></span>
+            <div>
+              <div class="feature-title">Um resumo</div>
+              <div class="feature-body">Sua vida financeira inteira, num único olhar — sem abrir dez abas.</div>
+            </div>
+          </li>
+          <li class="feature-item">
+            <span class="feature-dot"></span>
+            <div>
+              <div class="feature-title">Quanto entra</div>
+              <div class="feature-body">Saiba exatamente o valor que você tem disponível — sem conta de cabeça.</div>
+            </div>
+          </li>
+          <li class="feature-item">
+            <span class="feature-dot"></span>
+            <div>
+              <div class="feature-title">Para onde vai</div>
+              <div class="feature-body">Descubra, sem esforço, onde seu dinheiro está sendo gasto de verdade.</div>
+            </div>
+          </li>
+          <li class="feature-item">
+            <span class="feature-dot"></span>
+            <div>
+              <div class="feature-title">Onde você pode respirar</div>
+              <div class="feature-body">Veja em qual categoria vale a pena ajustar — e onde não precisa cortar nada.</div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="mockup reveal">
+          <div class="mockup-head">
+            <div>
+              <div class="mockup-label">Sobrou em julho</div>
+              <div class="mockup-value">R$ 1.240</div>
+            </div>
+            <div class="mockup-ring"><span>62%</span></div>
+          </div>
+          <div class="bars">
+            <div class="bar-row"><span class="bar-label">Moradia</span><span class="bar-track"><span class="bar-fill" style="width: 78%;"></span></span><span class="bar-value">R$ 980</span></div>
+            <div class="bar-row"><span class="bar-label">Alimentação</span><span class="bar-track"><span class="bar-fill" style="width: 52%;"></span></span><span class="bar-value">R$ 640</span></div>
+            <div class="bar-row"><span class="bar-label">Assinaturas</span><span class="bar-track"><span class="bar-fill gold" style="width: 24%;"></span></span><span class="bar-value">R$ 189</span></div>
+            <div class="bar-row"><span class="bar-label">Lazer</span><span class="bar-track"><span class="bar-fill" style="width: 34%;"></span></span><span class="bar-value">R$ 310</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top: 3rem;">
+        <a class="btn btn--ghost" href="#oferta">Quero essa clareza na minha vida →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block block--alt">
+    <div class="wrap">
+      <span class="eyebrow reveal">O que muda</span>
+      <h2 class="h2 reveal" style="max-width: 20ch;">Isso é o que acontece quando você tem controle.</h2>
+
+      <div class="benefits reveal">
+        <div class="benefit"><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Saber exatamente para onde o dinheiro foi</div>
+        <div class="benefit"><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Tomar decisões mais inteligentes, sem culpa</div>
+        <div class="benefit"><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Abrir o aplicativo do banco com tranquilidade</div>
+        <div class="benefit"><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Guardar dinheiro sem se sentir sofrendo</div>
+        <div class="benefit"><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Organizar a sua vida — não só a sua planilha</div>
+      </div>
+
+      <div class="reveal" style="margin-top: 3rem;">
+        <a class="btn btn--ghost" href="#oferta">Quero viver essa mudança →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="oferta">
+    <div class="wrap" style="text-align: center;">
+      <span class="eyebrow reveal">Comece hoje</span>
+      <h2 class="h2 reveal" style="max-width: 18ch; margin: 0 auto;">Comece hoje a organizar sua vida financeira.</h2>
+
+      <div class="offer-card reveal">
+        <span class="offer-tag">Pagamento único · acesso imediato</span>
+        <div class="offer-now">R$ 47,90</div>
+        <p class="offer-terms">Pagamento único · acesso imediato · funciona direto do navegador, no computador ou no celular</p>
+        <a class="btn btn--primary btn--block" href="https://pay.hotmart.com/J105830027G" target="_blank" rel="noopener noreferrer" style="width: 100%; justify-content: center;">Quero ter controle do meu dinheiro</a>
+        <div class="offer-guarantee">
+          <span class="check"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          Garantia incondicional de 7 dias — ou seu dinheiro de volta
+        </div>
+      </div>
+
+      <div class="faq reveal">
+        <details class="faq-item">
+          <summary>Preciso entender de planilha ou fórmula?</summary>
+          <p>Não. Você só preenche os seus dados; o sistema calcula e organiza tudo automaticamente.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Funciona no celular?</summary>
+          <p>Sim. O Controle Financeiro Premium funciona direto do navegador, no celular, tablet ou computador — sem precisar instalar nada.</p>
+        </details>
+        <details class="faq-item">
+          <summary>E se eu não me adaptar?</summary>
+          <p>Você tem 7 dias de garantia incondicional. Se não sentir diferença, devolvemos 100% do valor.</p>
+        </details>
+        <details class="faq-item">
+          <summary>O acesso é na hora?</summary>
+          <p>Sim, assim que a compra é confirmada, você recebe o acesso imediatamente.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Serve para quem tem renda variável, como autônomas?</summary>
+          <p>Sim — o Controle Financeiro Premium foi pensado especialmente para quem não recebe o mesmo valor todo mês.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 Controle Financeiro Premium. Todos os direitos reservados. · <a href="login.html">Já é cliente? Acessar</a>
+</footer>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function (el) { io.observe(el); });
+    } else {
+      els.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+  })();
+
+  (function () {
+    var canvas = document.getElementById('heroCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var wrap = canvas.parentElement;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var W = 0, H = 0;
+    var particles = [];
+    var cols = 6, rows = 6;
+    var startTime = null;
+    var settleDuration = 1900;
+
+    function accentColor() {
+      var v = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+      return v || '#5B2A45';
+    }
+    function goldColor() {
+      var v = getComputedStyle(document.documentElement).getPropertyValue('--gold').trim();
+      return v || '#A87C3F';
+    }
+
+    function layout() {
+      var rect = wrap.getBoundingClientRect();
+      W = rect.width; H = rect.height;
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      var padX = W * 0.16, padY = H * 0.16;
+      var gw = W - padX * 2, gh = H - padY * 2;
+      var pts = [];
+      for (var r = 0; r < rows; r++) {
+        for (var c = 0; c < cols; c++) {
+          pts.push({
+            x: padX + (gw * c) / (cols - 1),
+            y: padY + (gh * r) / (rows - 1)
+          });
+        }
+      }
+      particles = pts.map(function (p, i) {
+        var existing = particles[i];
+        return {
+          tx: p.x, ty: p.y,
+          sx: existing ? existing.sx : Math.random() * W,
+          sy: existing ? existing.sy : Math.random() * H,
+          delay: existing ? existing.delay : Math.random() * 500,
+          size: 2.4 + Math.random() * 2.2,
+          gold: Math.random() < 0.22,
+          bobSeed: Math.random() * Math.PI * 2
+        };
+      });
+    }
+
+    function easeOutBack(t) {
+      var c1 = 1.4, c3 = c1 + 1;
+      return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+    }
+
+    function draw(now) {
+      if (startTime === null) startTime = now;
+      var elapsed = now - startTime;
+      ctx.clearRect(0, 0, W, H);
+      var accent = accentColor();
+      var gold = goldColor();
+
+      particles.forEach(function (p) {
+        var x, y;
+        if (reduced) {
+          x = p.tx; y = p.ty;
+        } else {
+          var t = Math.min(Math.max((elapsed - p.delay) / settleDuration, 0), 1);
+          var e = easeOutBack(t);
+          x = p.sx + (p.tx - p.sx) * e;
+          y = p.sy + (p.ty - p.sy) * e;
+          if (t >= 1) {
+            y += Math.sin(now / 1400 + p.bobSeed) * 2.2;
+          }
+        }
+        ctx.beginPath();
+        ctx.arc(x, y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = p.gold ? gold : accent;
+        ctx.globalAlpha = p.gold ? 0.85 : 0.7;
+        ctx.fill();
+      });
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(draw);
+    }
+
+    layout();
+    requestAnimationFrame(draw);
+    window.addEventListener('resize', layout);
+  })();
+</script>
+</body>
+</html>
